@@ -5,11 +5,12 @@
     <style>
         /* General body styles */
         body {
-            background-color: #f0f4f8;
-            font-family: 'Arial', sans-serif;
+           background: url('https://as2.ftcdn.net/v2/jpg/05/45/38/83/1000_F_545388364_5FiamwYi5d9CzNHqBohM9xGloeSyylzV.jpg') no-repeat center center fixed;
+           font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
+            background-size: cover; /* Ensure background covers the screen */
         }
 
         /* Center heading style with white text color */
@@ -29,7 +30,7 @@
         .form-container {
             width: 40%;
             margin: 40px auto;
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the form */
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -39,6 +40,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.7); /* Transparent background for the table */
         }
 
         td {
@@ -154,11 +156,10 @@
                     <td><label for="baddress">Enter Address</label></td>
                     <td><textarea id="baddress" name="baddress" required></textarea></td>
                 </tr>
-				<tr>
-				    <td><label for="baccountnumber">Enter Account Number</label></td>
-				    <td><input type="text" id="baccountnumber" name="baccountnumber" required/></td>
-				</tr>
-
+                <tr>
+                    <td><label for="baccountnumber">Enter Account Number</label></td>
+                    <td><input type="text" id="baccountnumber" name="baccountnumber" required/></td>
+                </tr>
                 <tr>
                     <td><label for="baccounttype">Select Account Type</label></td>
                     <td>

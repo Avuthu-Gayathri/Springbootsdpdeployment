@@ -20,4 +20,6 @@ public interface LenderRepository extends JpaRepository<Lender, Integer>
 	
 	
 	
+	
+	
 }

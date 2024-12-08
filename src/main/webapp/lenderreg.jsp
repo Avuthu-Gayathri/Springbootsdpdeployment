@@ -9,11 +9,12 @@
     <style>
         /* General body styles */
         body {
-            background-color: #ECF0F1; /* Light gray background for a clean and modern look */
+           background: url('https://www.banastech.com/wp-content/uploads/2021/04/loan-management-system-key-benefits-scaled-e1618677879151.jpg') no-repeat center center fixed;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
+            background-size: cover; /* Ensure the background covers the screen */
         }
 
         /* Header styles */
@@ -30,7 +31,7 @@
         .form-container {
             width: 40%;
             margin: 40px auto;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
             padding: 20px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -40,6 +41,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.7); /* Transparent background for the table */
         }
 
         td {
@@ -106,8 +108,6 @@
     </style>
 </head>
 <body>
-
-
 
     <!-- Page heading -->
     <h3><u>Lender Registration</u></h3>

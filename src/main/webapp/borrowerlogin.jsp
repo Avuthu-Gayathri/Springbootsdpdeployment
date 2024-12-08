@@ -8,7 +8,7 @@
     <style>
         /* General body styles */
         body {
-            background-color: #eef2f3;
+            background: url('https://www.bluebricks.com.my/wp-content/uploads/2023/05/image2-2-1024x576.jpg') no-repeat center center fixed;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -31,7 +31,7 @@
         .form-container {
             width: 35%;
             margin: 50px auto;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -56,7 +56,7 @@
             font-weight: bold;
         }
 
-        /* Input fields styling */
+        /* Transparent input fields styling */
         input[type="text"],
         input[type="email"],
         input[type="password"] {
@@ -67,7 +67,14 @@
             box-sizing: border-box;
             font-size: 14px;
             margin-top: 8px;
-            background-color: #f9f9f9;
+            background-color: rgba(255, 255, 255, 0.6);
+            color: #333;
+        }
+
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder,
+        input[type="password"]::placeholder {
+            color: #666;
         }
 
         /* Button styles */
@@ -127,11 +134,11 @@
             <table>
                 <tr>
                     <td><label for="bemail">Enter Email ID</label></td>
-                    <td><input type="email" id="bemail" name="bemail" required/></td>
+                    <td><input type="email" id="bemail" name="bemail" placeholder="Email" required/></td>
                 </tr>
                 <tr>
                     <td><label for="bpwd">Enter Password</label></td>
-                    <td><input type="password" id="bpwd" name="bpwd" required/></td>
+                    <td><input type="password" id="bpwd" name="bpwd" placeholder="Password" required/></td>
                 </tr>
                 <tr>
                     <td colspan="2" class="button-container">

@@ -1,99 +1,94 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pay Loan Amount</title>
     <style>
-        /* General body styles */
+        /* General styles */
         body {
+            background-color: #f4f4f9;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1E2A38; /* Dark blue-gray background */
+            color: #333;
         }
 
-        /* Form container styles */
+        /* Form container styling */
         .form-container {
-            max-width: 400px;
+            width: 50%;
             margin: 50px auto;
-            background-color: #ffffff; /* White background */
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
-            border: 1px solid #dee2e6; /* Light border */
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
         h1 {
             text-align: center;
-            color: #343a40; /* Dark gray */
-            font-size: 24px;
-            margin-bottom: 20px;
+            color: #007bff;
         }
 
+        /* Input field and button styling */
         label {
-            display: block;
-            font-size: 14px;
-            color: #495057; /* Slightly darker gray */
-            margin-bottom: 8px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
         }
 
-        input[type="text"],
-        input[type="number"],
-        select {
+        input[type="text"], input[type="number"], select {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ced4da; /* Medium gray border */
-            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             font-size: 14px;
-            transition: all 0.3s;
-        }
-
-        input[type="text"]:focus,
-        input[type="number"]:focus,
-        select:focus {
-            border-color: #80bdff; /* Blue border on focus */
-            outline: none;
-            box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
         }
 
         input[type="submit"] {
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff; /* Blue background */
-            color: #ffffff;
+            background-color: #28a745;
+            color: white;
             border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 20px;
             transition: background-color 0.3s;
         }
 
         input[type="submit"]:hover {
-            background-color: #0056b3; /* Darker blue */
+            background-color: #218838;
         }
 
         .payment-info {
-            font-size: 13px;
-            color: #6c757d; /* Light gray text */
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
             text-align: center;
-            margin-top: 10px;
         }
 
-        /* Responsive design */
-        @media (max-width: 480px) {
-            .form-container {
-                padding: 20px;
-            }
+        /* Success and error message styling */
+        .success-message {
+            color: #28a745;
+            background-color: #e6f4ea;
+            padding: 10px;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-            h1 {
-                font-size: 20px;
-            }
-
-            input[type="submit"] {
-                font-size: 14px;
-            }
+        .error-message {
+            color: #dc3545;
+            background-color: #f8d7da;
+            padding: 10px;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
         }
     </style>
 </head>
@@ -101,20 +96,32 @@
 
 <div class="form-container">
     <h1>Pay Loan Amount</h1>
-    <form method="post" action="processLoanPayment">
+
+    <!-- Show success or error message -->
+    <c:if test="${not empty message}">
+        <div class="${message == 'Loan payment successful!' ? 'success-message' : 'error-message'}">
+            <c:out value="${message}" />
+        </div>
+    </c:if>
+
+    <form method="post" action="/loans/processLoanPayment">
         <label for="REQUESTId">REQUEST ID:</label>
-        <input type="text" id="REQUESTId" name="loanId" placeholder="Enter your REQUEST ID" required>
+        <input type="text" id="REQUESTId" name="loanId"
+               placeholder="Enter your REQUEST ID"
+               value="${loanId != null ? loanId : ''}" required>
 
         <label for="amount">Amount to Pay:</label>
-        <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+        <input type="number" id="amount" name="amount"
+               placeholder="Enter amount"
+               value="${amount != null ? amount : ''}" required>
 
         <label for="paymentMethod">Payment Method:</label>
         <select id="paymentMethod" name="paymentMethod" required>
             <option value="">Select a payment method</option>
-            <option value="creditCard">Credit Card</option>
-            <option value="debitCard">Debit Card</option>
-            <option value="netBanking">Net Banking</option>
-            <option value="upi">UPI</option>
+            <option value="creditCard" ${paymentMethod == 'creditCard' ? 'selected' : ''}>Credit Card</option>
+            <option value="debitCard" ${paymentMethod == 'debitCard' ? 'selected' : ''}>Debit Card</option>
+            <option value="netBanking" ${paymentMethod == 'netBanking' ? 'selected' : ''}>Net Banking</option>
+            <option value="upi" ${paymentMethod == 'upi' ? 'selected' : ''}>UPI</option>
         </select>
 
         <input type="submit" value="Pay Now">

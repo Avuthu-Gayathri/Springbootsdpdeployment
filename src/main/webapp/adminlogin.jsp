@@ -1,4 +1,3 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +5,8 @@
     <style>
         /* General body styles */
         body {
-            background-image: url("images/background.jpeg"); /* Relative path to the image */
-            background-color: #e9f5ff; /* Fallback color */
-            background-size: cover; /* Ensure the image covers the entire page */
-            background-position: center; /* Center the image */
-            background-repeat: no-repeat; /* Prevent tiling */
+            background: url('https://www.cashe.co.in/wp-content/uploads/2023/11/RiRgcYL2-Loan_Terms.png') no-repeat center center fixed; /* Set background image */
+            background-size: cover; /* Make it cover the entire page */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
@@ -28,7 +24,7 @@
         .form-container {
             width: 35%; /* Moderate width */
             margin: 40px auto;
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
             padding: 20px; /* Ample padding for a spacious look */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
             border-radius: 12px;

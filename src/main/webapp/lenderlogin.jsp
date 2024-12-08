@@ -7,7 +7,7 @@
     <style>
         /* General body styles */
         body {
-            background-color: #eef2f3;
+           background: url('https://www.bluebricks.com.my/wp-content/uploads/2022/11/businessman-shaking-hands-giving-dollar-bills-corruption-bribery-business-manager-deal-contract-1-1024x683.jpg') no-repeat center center fixed;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;

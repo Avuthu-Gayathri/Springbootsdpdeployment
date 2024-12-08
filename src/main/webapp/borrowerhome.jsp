@@ -7,7 +7,7 @@
     <style>
         /* General body styles */
         body {
-            background-color: #1E2A38; /* Dark blue-gray background */
+            background: url('https://media.licdn.com/dms/image/D5612AQGv4L7WZvX8BA/article-cover_image-shrink_720_1280/0/1717566805665?e=2147483647&v=beta&t=W-nYTCgoZwpvnSHDWG_CGRo5m14GXjqNb9DMezOqEbQ') no-repeat center center fixed; /* Set background image */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #F0F0F0;
             margin: 0;
@@ -63,6 +63,7 @@
     <%@ include file="Borrowernavbar.jsp" %>
    
 
-    <h1>Welcome, <c:out value="${borrower.name}" /></h1>  <!-- Correctly access borrower object -->
+   <h1 style="color: deep blue;">Welcome, <c:out value="${borrower.name}" /></h1>
+  <!-- Correctly access borrower object -->
 </body>
 </html>

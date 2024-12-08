@@ -19,6 +19,8 @@ public interface LenderService
 	public List<LoanRequest> ViewAllLoanRequests(); 
 	public String acceptLoanRequest(int requestId);
 	public String rejectLoanRequest(int requestId);
+	
+	
 
 
 	

@@ -11,6 +11,8 @@ import jakarta.persistence.Table;
 @Table(name = "lender_table")
 public class Lender 
 {
+	
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)	
 	@Column(name = "id", nullable = false)
@@ -79,6 +81,7 @@ public class Lender
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
     
     
 }

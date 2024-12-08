@@ -9,11 +9,11 @@
     <style>
         /* General body styles */
         body {
-            background-color: #f4f8fb;
-            font-family: 'Arial', sans-serif;
+            background: url('https://www.shutterstock.com/shutterstock/photos/2312920449/display_1500/stock-photo-technology-and-business-finance-concept-businessman-touching-icon-online-banking-and-icon-network-2312920449.jpg') no-repeat center center fixed; /* Set background image */
+            background-size: cover; /* Make it cover the entire page */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
         }
 
         /* Header style */
@@ -35,7 +35,7 @@
             background-color: #ffffff;
             color: #333;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 50px auto;
+            margin: 170px auto;
             width: 70%;
             border-radius: 8px;
         }
@@ -50,7 +50,7 @@
         /* Footer style */
         footer {
             text-align: center;
-            padding: 15px;
+            padding: 75px;
             background-color: #2c3e50;
             color: white;
             margin-top: 50px;
@@ -71,14 +71,13 @@
 </head>
 <body>
     <%@ include file="mainnavbar.jsp" %>
-    <h1>Welcome to Loan Management System</h1>
+   <h1 style="color: white;">Loan Wolves</h1>
+
     <ol>
         <b>Welcome to Loan Management System</b>
     </ol>
 
     <!-- Optional Footer -->
-    <footer>
-        <p>&copy; 2024 Loan Management System. All Rights Reserved.</p>
-    </footer>
+    
 </body>
 </html>
